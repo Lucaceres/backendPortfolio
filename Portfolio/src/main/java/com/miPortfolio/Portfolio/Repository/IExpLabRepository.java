@@ -4,11 +4,13 @@
  */
 package com.miPortfolio.Portfolio.Repository;
 
-import com.miPortfolio.Portfolio.Entity.Persona;
+import com.miPortfolio.Portfolio.Entity.ExperienciaLaboral;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IPersonaRepository extends JpaRepository<Persona, Long>{
-    
+public interface IExpLabRepository extends JpaRepository<ExperienciaLaboral, Integer>{
+    public Optional<ExperienciaLaboral> findByNombreExp(String nombreExp);
+    public boolean existsByNombreExp(String nombreExp);
 }
