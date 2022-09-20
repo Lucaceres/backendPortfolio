@@ -24,4 +24,12 @@ public class Proyecto {
     @NotNull
     private String link;
 
+    public Proyecto() {
+    }
+
+    public Proyecto(String titulo, String descripcion, String link) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.link = link;
+    }
 }
