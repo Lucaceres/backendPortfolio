@@ -12,10 +12,12 @@ import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 
 @Entity
 @Getter @Setter
-public class Persona {
+public class Persona{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

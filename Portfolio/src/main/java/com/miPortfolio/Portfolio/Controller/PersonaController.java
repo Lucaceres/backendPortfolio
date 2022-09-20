@@ -28,7 +28,7 @@ public class PersonaController {
     @Autowired
     IPersonaService iPersonaService;
     
-    @GetMapping ("/pesona/getall")
+    @GetMapping ("/persona/getall")
     public List<Persona> getPersona()
     {
         return iPersonaService.getPersona();
