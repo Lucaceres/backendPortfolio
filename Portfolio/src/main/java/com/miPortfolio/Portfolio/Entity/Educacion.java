@@ -1,5 +1,6 @@
 package com.miPortfolio.Portfolio.Entity;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,25 +12,28 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Setter @Getter
-public class Proyecto {
+public class Educacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
+    private Long id;
 
     @NotNull
-    private String titulo;
+    private String grado;
+
+    @NotNull
+    private String anioInicio;
+
+    @NotNull
+    private String anioFin;
+
     @NotNull
     private String descripcion;
 
-    @NotNull
-    private String link;
-
-    public Proyecto() {
-    }
-
-    public Proyecto(String titulo, String descripcion, String link) {
-        this.titulo = titulo;
+    public Educacion(String grado, String anioInicio, String anioFin, String descripcion)
+    {
+        this.grado = grado;
+        this.anioInicio = anioInicio;
+        this.anioFin = anioFin;
         this.descripcion = descripcion;
-        this.link = link;
     }
 }

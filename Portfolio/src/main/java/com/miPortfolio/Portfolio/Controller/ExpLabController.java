@@ -57,7 +57,7 @@ public class ExpLabController {
             return new ResponseEntity(new Mensaje("Name cant be blank"), HttpStatus.BAD_REQUEST);
         }
         
-        //si no esta en balnco verifico si no existe otra exp con el mismo nombre
+        //si no esta en blanco verifico si no existe otra exp con el mismo nombre
         else if(iExpService.existsByNombreExp(dtoexp.getNombreExp()))
         {
             return new ResponseEntity(new Mensaje("experience already exists"),HttpStatus.BAD_REQUEST);
