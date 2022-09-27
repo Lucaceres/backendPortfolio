@@ -69,6 +69,7 @@ public class ProyectoController {
         //CREACION
 
         Proyecto proyecto = new Proyecto(dtoProyecto.getTitulo(), dtoProyecto.getDescripcion(), dtoProyecto.getLink());
+        iProyectoService.save(proyecto);
         return new ResponseEntity(new Mensaje("Creation Successfull"), HttpStatus.OK);
     }
 
@@ -102,5 +103,16 @@ public class ProyectoController {
         proyecto.setDescripcion(dtoProyecto.getDescripcion());
         proyecto.setLink(dtoProyecto.getLink());
         return new ResponseEntity(new Mensaje("Proyecto Modified Successfully!"), HttpStatus.OK);
+    }
+
+    @DeleteMapping ("/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") long id)
+    {
+        if(!iProyectoService.existsById(id))
+        {
+            return new ResponseEntity(new Mensaje("Non existent Id"),HttpStatus.BAD_REQUEST);
+        }
+        iProyectoService.delete(id);
+        return new ResponseEntity(new Mensaje("Deleted experience correctly"), HttpStatus.OK);
     }
 }

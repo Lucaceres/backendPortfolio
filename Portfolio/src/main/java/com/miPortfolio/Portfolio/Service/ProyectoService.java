@@ -22,7 +22,7 @@ public class ProyectoService implements IProyectoService{
 
     @Override
     public Proyecto get(long id) {
-        return iproyectoRepository.getById(id);
+        return iproyectoRepository.findById(id).orElse(null);
     }
 
     @Override
