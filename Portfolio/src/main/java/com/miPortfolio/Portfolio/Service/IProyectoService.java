@@ -1,6 +1,7 @@
 package com.miPortfolio.Portfolio.Service;
 
 import com.miPortfolio.Portfolio.Entity.Proyecto;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
