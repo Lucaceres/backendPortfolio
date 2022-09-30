@@ -29,7 +29,7 @@ public class ProyectoController {
     }
 
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Proyecto> getById(@PathVariable("id" ) long id)
+    public ResponseEntity<Proyecto> getById(@PathVariable("id") long id)
     {
         if(!iProyectoService.existsById(id))
         {

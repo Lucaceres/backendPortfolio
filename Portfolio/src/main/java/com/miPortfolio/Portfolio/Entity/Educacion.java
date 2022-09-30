@@ -36,4 +36,7 @@ public class Educacion {
         this.anioFin = anioFin;
         this.descripcion = descripcion;
     }
+
+    public Educacion() {
+    }
 }

@@ -1,44 +1,50 @@
 package com.miPortfolio.Portfolio.Service;
 
 import com.miPortfolio.Portfolio.Entity.Educacion;
+import com.miPortfolio.Portfolio.Repository.IEducacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 @Transactional
 public class EducacionService implements IEducacionService{
 @Autowired
-IEducacionService iEducacionService;
+IEducacionRepository iEducacionRepository;
     @Override
     public List<Educacion> getAll() {
-        return iEducacionService.getAll();
+        return iEducacionRepository.findAll();
     }
 
     @Override
     public Educacion getById(long id) {
-        return iEducacionService.getById(id);
+        return iEducacionRepository.findById(id).orElse(null);
     }
 
     @Override
     public Educacion getByGrado(String grado) {
-        return iEducacionService.getByGrado(grado);
+        return iEducacionRepository.findByGrado(grado).orElse(null);
     }
 
     @Override
     public void save(Educacion educacion) {
-    iEducacionService.save(educacion);
+        iEducacionRepository.save(educacion);
     }
 
     @Override
     public void delete(long id) {
-    iEducacionService.delete(id);
+        iEducacionRepository.deleteById(id);
     }
 
     @Override
     public boolean existsByGrado(String grado) {
-        return iEducacionService.existsByGrado(grado);
+        return iEducacionRepository.existsByGrado(grado);
+    }
+
+    @Override
+    public boolean existsById(long id) {
+        return iEducacionRepository.existsById(id);
     }
 }
