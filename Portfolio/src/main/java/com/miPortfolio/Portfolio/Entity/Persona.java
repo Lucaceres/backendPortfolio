@@ -4,15 +4,15 @@
  */
 package com.miPortfolio.Portfolio.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
@@ -25,5 +25,23 @@ public class Persona{
     private String nombre;
     @NotNull
     private String apellido;
-    
+
+    @NotNull
+    private String acerca;
+
+    @JsonIgnoreProperties("persona")
+    @OneToMany
+    @JoinColumn(name = "persona_id", referencedColumnName = "id")
+    private List<Educacion> educaciones;
+
+    @JsonIgnoreProperties("persona")
+    @OneToMany
+    @JoinColumn(name = "persona_id", referencedColumnName = "id")
+    private List<ExperienciaLaboral> experienciaslab;
+
+    @JsonIgnoreProperties("persona")
+    @OneToMany
+    @JoinColumn(name = "persona_id", referencedColumnName = "id")
+    private List<Proyecto> proyectos;
+
 }

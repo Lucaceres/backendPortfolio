@@ -8,13 +8,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
-@RequestMapping("proyecto")
+@RequestMapping("api/proyecto")
 @CrossOrigin(origins = "http://localhost:4200")
 @Transactional
 public class ProyectoController {
@@ -22,6 +23,7 @@ public class ProyectoController {
     IProyectoService iProyectoService;
 
     @GetMapping("/list")
+
     public ResponseEntity<List<Proyecto>>getAll()
     {
         List<Proyecto> list = iProyectoService.getAll();
@@ -29,6 +31,7 @@ public class ProyectoController {
     }
 
     @GetMapping("/detail/{id}")
+
     public ResponseEntity<Proyecto> getById(@PathVariable("id") long id)
     {
         if(!iProyectoService.existsById(id))
@@ -42,6 +45,7 @@ public class ProyectoController {
     }
 
     @PostMapping("/create")
+
     public ResponseEntity<?> create(@RequestBody DtoProyecto dtoProyecto)
     {
 
@@ -74,6 +78,7 @@ public class ProyectoController {
     }
 
     @PutMapping("/update/{id}")
+
     public ResponseEntity<?> update (@PathVariable("id") long id,
                                      @RequestBody DtoProyecto dtoProyecto)
     {
@@ -106,6 +111,7 @@ public class ProyectoController {
     }
 
     @DeleteMapping ("/delete/{id}")
+
     public ResponseEntity<?> delete(@PathVariable("id") long id)
     {
         if(!iProyectoService.existsById(id))

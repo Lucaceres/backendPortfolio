@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.swing.text.EditorKit;
@@ -15,7 +16,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
-@RequestMapping("educacion")
+@RequestMapping("api/educacion")
 @CrossOrigin(origins = "http://localhost:4200")
 @Transactional
 public class EducacionController {
@@ -23,6 +24,7 @@ public class EducacionController {
     IEducacionService iEducacionService;
 
     @GetMapping("/list")
+
     public ResponseEntity<List<Educacion>>getAll()
     {
         List<Educacion> list = iEducacionService.getAll();
@@ -30,6 +32,7 @@ public class EducacionController {
     }
 
     @GetMapping("/detail/{id}")
+
     public ResponseEntity<Educacion> getById(@PathVariable("id") long id)
     {
         if(!iEducacionService.existsById(id))
@@ -43,6 +46,7 @@ public class EducacionController {
     }
 
     @PostMapping("/create")
+
     public ResponseEntity<?> create(@RequestBody DtoEducacion dtoEducacion)
     {
         //VALIDACIONES
@@ -70,6 +74,7 @@ public class EducacionController {
     }
 
     @PutMapping("update/{id}")
+
     public ResponseEntity<?> update (@PathVariable("id") long id,
                                      @RequestBody DtoEducacion dtoEducacion)
     {
@@ -94,6 +99,7 @@ public class EducacionController {
     }
 
     @DeleteMapping("/delete/{id}")
+
     public ResponseEntity<?> delete(@PathVariable("id") long id)
     {
         if(!iEducacionService.existsById(id))

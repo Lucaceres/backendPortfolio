@@ -8,6 +8,7 @@ import com.miPortfolio.Portfolio.Dto.DtoExperiencia;
 import com.miPortfolio.Portfolio.Service.IExpLabService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +25,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("explab")
+@RequestMapping("api/explab")
 @CrossOrigin(origins = "http://localhost:4200")
 @Transactional
 public class ExpLabController {
@@ -32,6 +33,7 @@ public class ExpLabController {
     IExpLabService iExpService;
     
     @GetMapping("/list")
+
     public ResponseEntity <List <ExperienciaLaboral>> getAll()
     {
         List<ExperienciaLaboral> list = iExpService.getAll();
@@ -39,6 +41,7 @@ public class ExpLabController {
     }
     
     @GetMapping("/detail/{id}")
+
     public ResponseEntity<ExperienciaLaboral> getById(@PathVariable("id") int id){
         if(!iExpService.existsById(id))
             return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
@@ -70,6 +73,7 @@ public class ExpLabController {
     }
     
     @PutMapping("/update/{id}")
+
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoExperiencia dtoexp)
     {
         if(!iExpService.existsById(id))
@@ -95,6 +99,7 @@ public class ExpLabController {
     }
     
     @DeleteMapping ("/delete/{id}")
+
     public ResponseEntity<?> delete(@PathVariable("id") int id)
     {
         if(!iExpService.existsById(id))
