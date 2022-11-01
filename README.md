@@ -2,4 +2,4 @@
 
 
 
-![alt text](https://github.com/Lucaceres/backendPortfolio/tree/main/DOCUMENTACION/Educacion.jpg?raw=true)
+![alt text](https://github.com/Lucaceres/backendPortfolio/blob/main/DOCUMENTACION/Experiencia%20laboral.png?raw=true)
