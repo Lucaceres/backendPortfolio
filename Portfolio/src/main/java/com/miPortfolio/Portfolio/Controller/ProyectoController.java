@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/proyecto")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://frontendap-222a1.web.app/")
 @Transactional
 public class ProyectoController {
     @Autowired

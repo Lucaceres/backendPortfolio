@@ -28,9 +28,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "*", maxAge=3600)
+
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("api/auth")
+@CrossOrigin(origins = "https://frontendap-222a1.web.app/")
 public class AuthController {
     @Autowired
     AuthenticationManager authenticationManager;
