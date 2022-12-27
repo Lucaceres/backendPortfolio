@@ -29,6 +29,9 @@ public class Persona{
     @NotNull
     private String acerca;
 
+    @NotNull
+    private String puesto;
+
     @JsonIgnoreProperties("persona")
     @OneToMany
     @JoinColumn(name = "persona_id", referencedColumnName = "id")
@@ -44,4 +47,14 @@ public class Persona{
     @JoinColumn(name = "persona_id", referencedColumnName = "id")
     private List<Proyecto> proyectos;
 
+    public Persona(String nombre, String apellido, String acerca, String puesto) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.acerca = acerca;
+        this.puesto = puesto;
+    }
+    public Persona()
+    {
+
+    }
 }
