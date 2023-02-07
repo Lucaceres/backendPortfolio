@@ -38,4 +38,13 @@ public class SignupRequest {
     public void setPassUsuario(String passUsuario) {
         this.passUsuario = passUsuario;
     }
+
+    public SignupRequest(String nombreUsuario, Set<String> roles, String passUsuario) {
+        this.nombreUsuario = nombreUsuario;
+        this.roles = roles;
+        this.passUsuario = passUsuario;
+    }
+
+    public SignupRequest() {
+    }
 }

@@ -84,7 +84,7 @@ public class AuthController {
 
         if (strRoles == null) {
             Rol rolUsuario = rolRepository.findByNombreRol(Roles.ROLE_USER)
-                    .orElseThrow(() -> new RuntimeException("Error: Rol no ecncontrado123"));
+                    .orElseThrow(() -> new RuntimeException("Error: Rol no ecncontrado"));
             roles.add(rolUsuario);
         } else {
             strRoles.forEach(role -> {
