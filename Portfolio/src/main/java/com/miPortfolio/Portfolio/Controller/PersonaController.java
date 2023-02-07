@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.*;
  * @author user
  */
 @RestController
-//@CrossOrigin(origins = "https://frontendap-222a1.web.app")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://frontendap-222a1.web.app")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 
 public class PersonaController {
@@ -50,7 +50,7 @@ public class PersonaController {
         return "Persona creada correctamente";
     }
     
-    @PutMapping ("/persona/editar/{id}")
+    @PutMapping ("/persona/{id}")
 
     public Persona editPersona(@PathVariable Long id,
                                @RequestBody Persona persona)

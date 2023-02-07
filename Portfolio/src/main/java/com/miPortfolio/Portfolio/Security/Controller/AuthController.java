@@ -28,10 +28,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "http://localhost:4200/")
+//@CrossOrigin(origins = "http://localhost:4200/")
 @RestController
 @RequestMapping("api/auth")
-//@CrossOrigin(origins = "https://frontendap-222a1.web.app/")
+@CrossOrigin(origins = "https://frontendap-222a1.web.app/")
 
 public class AuthController {
     @Autowired
