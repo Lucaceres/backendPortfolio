@@ -5,9 +5,11 @@
 package com.miPortfolio.Portfolio.Service;
 
 import com.miPortfolio.Portfolio.Entity.ExperienciaLaboral;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
-
+@Service
 public interface IExpLabService {
     
     public List<ExperienciaLaboral>getAll();

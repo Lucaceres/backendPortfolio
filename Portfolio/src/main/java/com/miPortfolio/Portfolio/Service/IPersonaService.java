@@ -5,10 +5,12 @@
 package com.miPortfolio.Portfolio.Service;
 
 import com.miPortfolio.Portfolio.Entity.Persona;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 
-
+@Service
 public interface IPersonaService {
     public List<Persona> getPersona();
     
