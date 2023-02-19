@@ -20,7 +20,7 @@ public class JwtUtils {
     private String jwtSecret;
 
     @Value("${lucaceres.app.jwtExpirationMs}")
-    private int jwtExpirationMs;
+    private String jwtExpirationMs;
 
     @Value("${lucaceres.app.jwtCookieName}")
     private String jwtCookie;
