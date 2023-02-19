@@ -32,7 +32,7 @@ public class PortfolioApplication {
 	}
 
 	//context llena la base de datos si esta vacia
-	@Bean
+	/*@Bean
 	public CommandLineRunner context(RolRepository rolRepository, IPersonaRepository personaRepository, UsuarioRepository usuarioRepository)
 	{
 		return args -> {
@@ -66,7 +66,11 @@ public class PortfolioApplication {
 				URI locationUser = restTemplate.postForLocation("http://localhost:8080/api/auth/signup",signupRequestUsuario,SignupRequest.class);
 			}
 		};
+
+
 	}
+
+	 */
 
 
 

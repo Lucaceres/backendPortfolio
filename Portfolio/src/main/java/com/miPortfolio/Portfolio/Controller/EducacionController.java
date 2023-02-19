@@ -22,7 +22,7 @@ import java.util.List;
 @Transactional
 public class EducacionController {
     @Autowired
-    IEducacionService iEducacionService;
+     IEducacionService iEducacionService;
 
     @GetMapping("/list")
 
