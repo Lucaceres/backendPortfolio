@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  *
  * @author user
  */
-@Service
+
 public class PersonaService implements IPersonaService{
     @Autowired
     IPersonaRepository iPersonaRepository;
