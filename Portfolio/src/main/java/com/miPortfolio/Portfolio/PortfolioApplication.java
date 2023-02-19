@@ -26,12 +26,8 @@ import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
 
-@Configuration
-@EnableAutoConfiguration
-@ComponentScan
-@EntityScan("com.miPortfolio.Portfolio.Repository")
-@EnableJpaRepositories("com.miPortfolio.Portfolio.Repository")
-//@SpringBootApplication
+
+@SpringBootApplication
 public class PortfolioApplication {
 
 
