@@ -10,6 +10,7 @@ import java.util.List;
 
 
 @Transactional
+@Service
 public class ProyectoService implements IProyectoService{
     @Autowired
     IproyectoRepository iproyectoRepository;

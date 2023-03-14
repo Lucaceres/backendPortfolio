@@ -2,6 +2,7 @@ package com.miPortfolio.Portfolio.Controller;
 
 import com.miPortfolio.Portfolio.Dto.DtoEducacion;
 import com.miPortfolio.Portfolio.Entity.Educacion;
+import com.miPortfolio.Portfolio.Service.EducacionService;
 import com.miPortfolio.Portfolio.Service.IEducacionService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ import java.util.List;
 @Transactional
 public class EducacionController {
     @Autowired
-     IEducacionService iEducacionService;
+    IEducacionService iEducacionService;
 
     @GetMapping("/list")
 

@@ -37,7 +37,7 @@ public class PortfolioApplication {
 	}
 
 	//context llena la base de datos si esta vacia
-	/*@Bean
+	@Bean
 	public CommandLineRunner context(RolRepository rolRepository, IPersonaRepository personaRepository, UsuarioRepository usuarioRepository)
 	{
 		return args -> {
@@ -75,7 +75,7 @@ public class PortfolioApplication {
 
 	}
 
-	 */
+
 
 
 
