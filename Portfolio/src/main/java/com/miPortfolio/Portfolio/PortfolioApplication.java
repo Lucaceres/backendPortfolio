@@ -28,6 +28,7 @@ import java.util.Set;
 
 
 @SpringBootApplication
+@EnableJpaRepositories(basePackages = {"com.miPortfolio.Portfolio.Repository","com.miPortfolio.Portfolio.Security.Repository"})
 public class PortfolioApplication {
 
 
