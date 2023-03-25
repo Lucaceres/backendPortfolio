@@ -1,4 +1,4 @@
 FROM amazoncorretto:8
 MAINTAINER lucascaceres
-COPY out/artifacts/Portfolio_jar/Portfolio.jar Portfolio.jar
-ENTRYPOINT ["java","-jar","/Portfolio.jar"]
+COPY target/Portfolio-0.0.1-SNAPSHOT Portfolio-0.0.1-SNAPSHOT
+ENTRYPOINT ["java","-jar","/Portfolio-0.0.1-SNAPSHOT"]
