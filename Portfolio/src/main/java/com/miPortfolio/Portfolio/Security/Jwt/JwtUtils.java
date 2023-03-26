@@ -11,6 +11,8 @@ import org.springframework.web.util.WebUtils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 
 @Component
@@ -71,10 +73,16 @@ public class JwtUtils {
 
 
     public String generateTokenFromUsername(String nombreUsuario) {
+
+        Calendar timeout = Calendar.getInstance();
+
+       timeout.setTimeInMillis(System.currentTimeMillis() + Long.parseLong(jwtExpirationMs));
+        Long expiration = timeout.getTimeInMillis();
+
         return Jwts.builder()
                 .setSubject(nombreUsuario)
-                .setIssuedAt(new Date())
-                .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+                //.setIssuedAt(new Date()).setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+                .setExpiration(new Date(expiration))
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
     }
