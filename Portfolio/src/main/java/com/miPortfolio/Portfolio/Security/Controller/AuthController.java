@@ -31,8 +31,8 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("api/auth")
-//@CrossOrigin(origins = "https://frontendap-222a1.web.app/")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "https://frontendap-222a1.web.app/")
+//@CrossOrigin(origins = "http://localhost:4200/")
 
 public class AuthController {
     @Autowired

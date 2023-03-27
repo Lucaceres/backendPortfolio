@@ -18,8 +18,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/educacion")
-//@CrossOrigin(origins = "https://frontendap-222a1.web.app/")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://frontendap-222a1.web.app/")
+//@CrossOrigin(origins = "http://localhost:4200")
 @Transactional
 public class EducacionController {
     @Autowired
